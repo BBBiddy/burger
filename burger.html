@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="burger.png">
+    <title id="title"></title>
+</head>
+<body>
+    <img id="image" onmousedown="first(); return false;" onmouseup="second()" src="burger.png" width="556" height="438">
+    <br>
+    <h2 id="clicks"></h2>
+</body>
+<script>
+    var clicks = 0
+    function first() {
+        image.style.transform = "scale(0.95, 0.95)";
+        clicks = clicks + 1;
+    }
+    function second() {
+        image.style.transform = null;
+    }
+    var t = setInterval(function() {
+        document.getElementById("clicks").innerHTML = clicks;
+    }, 50)
+    var ti = setInterval(function() {
+        document.getElementById("title").innerHTML = "Burger Clicker - " + clicks;
+    }, 1000)
+</script>
+</html>

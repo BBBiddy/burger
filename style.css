@@ -1,0 +1,50 @@
+body {
+    text-align: center;
+}
+img {
+    margin-top: 50px;
+    scale: 0.5;
+}
+h2 {
+    margin-top: 50px
+}
+@keyframes a {
+    0% {
+        scale: 1;
+    }
+    25% {
+        scale: 1.2;
+    }
+    50% {
+        scale: 1.05;
+    }
+    75% {
+        scale: 1.15
+    }
+    100% {
+        scale: 1.1;
+    }
+}
+@keyframes b {
+    0% {
+        scale: 1.1;
+    }
+    25% {
+        scale: 0.9;
+    }
+    50% {
+        scale: 1.05
+    }
+    75% {
+        scale: 0.95;
+    }
+    100% {
+        scale: 1;
+    }
+}
+img:hover {
+    animation: a 0.1s linear normal forwards;
+}
+img:not(:hover) {
+    animation: b 0.1s linear normal forwards;
+}

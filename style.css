@@ -1,16 +1,19 @@
-head {
-    text-align: left;
-}
-body {
-    text-align: center;
-}
 img {
     margin: 50px;
+    user-select: none;
+    cursor: pointer;
 }
 button {
     padding: 50px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: large;
+}
+#save {
+    padding: 0px;
+    font-size: small;
 }
 @keyframes a {
     0% {

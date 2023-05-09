@@ -45,7 +45,7 @@
         }
         document.getElementById("clicks").innerHTML = "Burgers: " + Math.floor(clicks);
         document.getElementById("btn").innerHTML = cost;
-        document.getElementById("per").innerHTML = clicker / 10;
+        document.getElementById("per").innerHTML = "Burgers per sec: " + (clicker / 10);
     }, 50)
     var ti = setInterval(function() {
         document.getElementById("title").innerHTML = Math.floor(clicks) + " Burgers - Burger Clicker";

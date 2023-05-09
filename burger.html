@@ -10,6 +10,7 @@
 </head>
 <body>
     <h2 id="clicks"></h2>
+    <h3 id="per"></h3>
     <img id="image" onmousedown="first(); return false;" onmouseup="second()" src="burger.png" width="556" height="438">
     <br>
     <button id="btn" onmousedown="third(); return false;" onmouseup="fourth()"></button>
@@ -44,6 +45,7 @@
         }
         document.getElementById("clicks").innerHTML = "Burgers: " + Math.floor(clicks);
         document.getElementById("btn").innerHTML = cost;
+        document.getElementById("per").innerHTML = clicker / 10;
     }, 50)
     var ti = setInterval(function() {
         document.getElementById("title").innerHTML = Math.floor(clicks) + " Burgers - Burger Clicker";

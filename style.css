@@ -9,9 +9,6 @@ button {
     padding-left: 100px;
     padding-right: 100px;
 }
-h3 {
-    border: 5px solid black;
-}
 @keyframes a {
     0% {
         scale: 1;

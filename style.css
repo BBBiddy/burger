@@ -2,11 +2,15 @@ body {
     text-align: center;
 }
 img {
-    margin-top: 50px;
-    scale: 0.5;
+    margin: 50px;
 }
-h2 {
-    margin-top: 50px
+button {
+    padding: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+h3 {
+    border: 5px solid black;
 }
 @keyframes a {
     0% {
@@ -46,5 +50,11 @@ img:hover {
     animation: a 0.1s linear normal forwards;
 }
 img:not(:hover) {
+    animation: b 0.1s linear normal forwards;
+}
+button:hover {
+    animation: a 0.1s linear normal forwards;
+}
+button:not(:hover) {
     animation: b 0.1s linear normal forwards;
 }

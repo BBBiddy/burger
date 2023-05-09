@@ -9,12 +9,15 @@
     <title id="title"></title>
 </head>
 <body>
-    <img id="image" onmousedown="first(); return false;" onmouseup="second()" src="burger.png" width="556" height="438">
-    <br>
     <h2 id="clicks"></h2>
+    <img id="image" onmousedown="first(); return false;" onmouseup="second()" src="number1gaymer.png" width="556" height="438">
+    <br>
+    <button id="btn" onmousedown="third(); return false;" onmouseup="fourth()"></button>
 </body>
 <script>
-    var clicks = 0
+    var clicks = 0;
+    var clicker = 0;
+    var cost = 15;
     function first() {
         image.style.transform = "scale(0.95, 0.95)";
         clicks = clicks + 1;
@@ -22,11 +25,29 @@
     function second() {
         image.style.transform = null;
     }
+    function third() {
+        btn.style.transform = "scale(0.95, 0.95)";
+        if (clicks >= cost) {
+            clicker = clicker + 1;
+            clicks = clicks - cost;
+            cost = cost + Math.ceil(cost * 0.15);
+        }
+    }
+    function fourth() {
+        btn.style.transform = null;
+    }
     var t = setInterval(function() {
-        document.getElementById("clicks").innerHTML = clicks;
+        if (clicks >= cost) {
+            btn.style.opacity = "1"
+        } else {
+            btn.style.opacity = "0.3"
+        }
+        document.getElementById("clicks").innerHTML = "Burgers: " + Math.floor(clicks);
+        document.getElementById("btn").innerHTML = cost;
     }, 50)
     var ti = setInterval(function() {
-        document.getElementById("title").innerHTML = "Burger Clicker - " + clicks;
+        document.getElementById("title").innerHTML = Math.floor(clicks) + " Burgers - Burger Clicker";
+        clicks = clicks + (clicker / 10)
     }, 1000)
 </script>
 </html>

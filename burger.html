@@ -9,69 +9,14 @@
     <title id="title"></title>
 </head>
 <body>
-    <button id="save">save</button>
     <h1 id="clicks"></h1>
     <h3 id="per"></h3>
-    <img id="image" onmousedown="first(); return false;" onmouseup="second()" src="burger.png" width="556" height="438">
-    <br>
-    <button id="wrkr" onmousedown="third(); return false;" onmouseup="second()"></button>
-    <br>
-    <button id="mngr" onmousedown="fourth()" onmouseup="second()"></button>
+    <img id="image" onmousedown="first()" onmouseup="second()" src="burger.png" width="556" height="438">
 </body>
-<script>
-    var cost = 15;
-    var cost1 = 100;
-    document.getElementById("wrkr").innerHTML = "Worker: " + cost + " Burgers";
-    document.getElementById("mngr").innerHTML = "Manager: " + cost1 + " Burgers";
-    var clicks = 0;
-    var clicker = 0;
-    function first() {
-        image.style.transform = "scale(0.95, 0.95)";
-        clicks = clicks + 1;
-        localStorage.setItem("clicks", clicks);
-    }
-    function second() {
-        image.style.transform = null;
-        wrkr.style.transform = null;
-        mngr.style.transform = null;
-    }
-    function third() {
-        wrkr.style.transform = "scale(0.95, 0.95)";
-        if (clicks >= cost) {
-            clicker = clicker + 1;
-            clicks = clicks - cost;
-            cost = cost + Math.ceil(cost * 0.15);
-            document.getElementById("wrkr").innerHTML = "Worker: " + cost + " Burgers";
-        }
-    }
-    function fourth() {
-        mngr.style.transform = "scale(0.95, 0.95)"
-        if (clicks >= cost1) {
-            clicker = clicker + 10;
-            clicks = clicks - cost1;
-            cost1 = cost1 + Math.ceil(cost1 * 0.15);
-            document.getElementById("mngr").innerHTML = "Manager: " + cost1 + " Burgers";
-        }
-    }
-    var t = setInterval(function() {
-        if (clicks >= cost) {
-            wrkr.style.opacity = "1"
-        } else {
-            wrkr.style.opacity = "0.3"
-        }
-        if (clicks >= cost1) {
-            mngr.style.opacity = "1"
-        } else {
-            mngr.style.opacity = "0.3"
-        }
-        document.getElementById("clicks").innerHTML = "Burgers: " + Math.floor(clicks);
-        document.getElementById("per").innerHTML = "Burgers per sec: " + (clicker / 10);
-    }, 10)
-    var ti = setInterval(function() {
-        document.getElementById("title").innerHTML = Math.floor(clicks) + " Burgers - Burger Clicker";
-    }, 1000)
-    var tim = setInterval(function() {
-        clicks = clicks + (clicker / 1000);
-    }, 10)
-</script>
+<div>
+    <button id="fmly" onmousedown="third()" onmouseup="second()"></button>
+    <button id="wrkr" onmousedown="fourth()" onmouseup="second()"></button>
+    <button id="mngr" onmousedown="fifth()" onmouseup="second()"></button>
+</div>
+<script src="script.js"></script>
 </html>

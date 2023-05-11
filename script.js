@@ -4,7 +4,7 @@ var cost2 = 1100;
 document.getElementById("fmly").innerHTML = "Relative: " + cost + " Burgers";
 document.getElementById("wrkr").innerHTML = "Worker: " + cost1 + " Burgers";
 document.getElementById("mngr").innerHTML = "Manager: " + cost2 + " Burgers";
-var clicks = 0;
+var clicks = localStorage.getItem("burgers") || 0;
 var clicker = 0;
 function first() {
     image.style.transform = "scale(0.95, 0.95)";
@@ -21,6 +21,7 @@ function third() {
     if (clicks >= cost) {
         clicker = clicker + 1;
         clicks = clicks - cost;
+        localStorage.setItem("burgers", clicks);
         cost = cost + Math.ceil(cost * 0.15);
         document.getElementById("fmly").innerHTML = "Relative: " + cost + " Burgers";
     }
@@ -30,6 +31,7 @@ function fourth() {
     if (clicks >= cost1) {
         clicker = clicker + 10;
         clicks = clicks - cost1;
+        localStorage.setItem("burgers", clicks);
         cost1 = cost1 + Math.ceil(cost1 * 0.15);
         document.getElementById("wrkr").innerHTML = "Worker: " + cost1 + " Burgers";
     }
@@ -39,6 +41,7 @@ function fifth() {
     if (clicks >= cost2) {
         clicker = clicker + 80;
         clicks = clicks - cost2;
+        localStorage.setItem("burgers", clicks);
         cost2 = cost2 + Math.ceil(cost2 * 0.15);
         document.getElementById("mngr").innerHTML = "Manager: " + cost2 + " Burgers";
     }
@@ -67,4 +70,5 @@ var ti = setInterval(function() {
 }, 1000)
 var tim = setInterval(function() {
     clicks = clicks + (clicker / 1000);
+    localStorage.setItem("burgers", clicks);
 }, 10)
